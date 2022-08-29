@@ -1,0 +1,53 @@
+.button-outer {
+  --size: 15vh;
+  --timing: cubic-bezier(0.1, 1, 0, 1);
+  --radiate: linear-gradient(45deg, #f002, #00f2);
+
+  background: rgb(var(--color)) var(--radiation);
+  font-size: var(--size);
+  font-weight: bold;
+  transition: width var(--timing) 2s, height var(--timing) 2s, background-color var(--timing) 2s, box-shadow 0.3s, transform var(--timing) 2s, filter var(--timing) 2s, border-radius var(--timing) 2s;
+  padding: 0.5em 0.5em;
+  box-shadow: 0 0 0 1em rgba(var(--color), 0);
+  border-radius: 0.5em;
+  filter: brightness(1);
+  transform: scale(1);
+  white-space: pre;
+}
+
+.button-outer:hover {
+  transition: width var(--timing) 2s, height var(--timing) 2s, background-color var(--timing) 2s, box-shadow var(--timing) 2s, transform var(--timing) 2s, filter var(--timing) 2s, border-radius var(--timing) 2s;
+  box-shadow: 0 0 0 0.25em rgba(var(--color), 0.5);
+  transform: scale(1.05);
+}
+
+.button-outer:active {
+  transition: width var(--timing) 1s, height var(--timing) 1s, background-color var(--timing) 1s, box-shadow var(--timing) 1s, transform var(--timing) 1s, filter var(--timing) 1s, border-radius var(--timing) 1s;
+  box-shadow: 0 0 0 0.125em rgba(var(--color), 0.5);
+  filter: brightness(0.8);
+  transform: scale(0.95);
+}
+
+.button-inner {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  color: white;
+  backface-visibility: hidden;
+  transform: translateZ(0) scale(0) rotateZ(0.001deg);
+  display: flex;
+  align-items: center;
+}
+
+.button-inner.active {
+  transition: opacity var(--timing) 2s, transform var(--timing) 2s;
+  transform: translateZ(0) scale(1) rotateZ(0.001deg);
+  opacity: 1;
+  will-change: transform;
+}
+
+.button-inner > svg {
+  font-size: 1.5em;
+  align-self: center;
+}
