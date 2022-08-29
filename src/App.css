@@ -33,7 +33,7 @@
 }
 
 .button-outer-test-loading.button-outer-test-loading {
-  border-radius: 2em;
+  border-radius: 50%;
 }
 
 @keyframes spin {

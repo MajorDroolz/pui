@@ -8,4 +8,5 @@
   left: 50%;
   transform: translate(-50%, -50%);
   will-change: transform, top, left;
+  pointer-events: none;
 }
